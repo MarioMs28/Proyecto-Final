@@ -1,0 +1,21 @@
+<div class="admin-wrapper">
+  <div class="admin-container">
+    <h3>Usuarios Registrados</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Correo electrónico</th>
+          <th>Contraseña</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.username }}</td>
+          <td>{{ usuario.correo }}</td>
+          <td>{{ usuario.password }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

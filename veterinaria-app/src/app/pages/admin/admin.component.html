@@ -1,0 +1,20 @@
+<div class="admin-container">
+  <h1 class="admin-title">{{ titulo }}</h1>
+
+  <nav>
+    <a *ngIf="authService.isAdmin()" [routerLink]="['./usuarios']">
+      <button>Usuarios</button>
+    </a>
+    <a *ngIf="authService.isAdmin() || authService.isVeterinario()" [routerLink]="['./incidencias-veterinario']">
+      <button>Incidencias Veterinario</button>
+    </a>
+    <a *ngIf="authService.isAdmin()" [routerLink]="['./incidencias-cliente']">
+      <button>Incidencias Cliente</button>
+    </a>
+    <a *ngIf="authService.isAdmin() || authService.isAlmacen()" [routerLink]="['./medicamentos']">
+      <button>Medicamentos</button>
+    </a>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

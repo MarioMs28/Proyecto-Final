@@ -1,0 +1,12 @@
+<div class="admin-wrapper">
+  <div class="admin-container">
+    <h2>Incidencias del Veterinario</h2>
+    <ul>
+      <li *ngFor="let vet of incidenciasVeterinario">
+        <strong>Folio: {{ vet.folioMascota }}</strong><br />
+        Cliente: {{ vet.nombreCliente }}<br />
+        Problema: {{ vet.problema }}<br />
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<form (ngSubmit)="login()">
+  <h2>Veterinaria</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="usuario"
+    name="usuario"
+    placeholder="Usuario"
+    required
+  />
+
+  <input
+    type="password"
+    [(ngModel)]="contrasena"
+    name="contrasena"
+    placeholder="Contraseña"
+    required
+  />
+
+  <button type="submit">Iniciar Sesión</button>
+
+  <p class="divider-text">o</p>
+
+  <button type="button" class="btn-secundario" (click)="irAFormularioCliente()">
+    Crear Reporte
+  </button>
+</form>

@@ -1,0 +1,12 @@
+<div class="admin-wrapper">
+  <div class="admin-container">
+    <h2>Incidencias de Clientes</h2>
+    <div *ngFor="let incidencia of incidencias" class="card">
+      <h3>{{ incidencia.tipo }}</h3>
+      <p><strong>Nombre:</strong> {{ incidencia.nombre }} {{ incidencia.apellidos }}</p>
+      <p><strong>Correo:</strong> {{ incidencia.correo }}</p>
+      <p><strong>Teléfono:</strong> {{ incidencia.telefono }}</p>
+      <p><strong>Descripción:</strong> {{ incidencia.descripcion }}</p>
+    </div>
+  </div>
+</div>

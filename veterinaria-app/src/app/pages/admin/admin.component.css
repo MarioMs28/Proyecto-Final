@@ -1,0 +1,47 @@
+.admin-container {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.admin-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 160px;
+}
+
+nav button:hover {
+  background-color: #1565c0;
+  transform: translateY(-2px);
+}
+
+nav button:active {
+  background-color: #0d47a1;
+  transform: translateY(1px);
+}

@@ -1,0 +1,27 @@
+<div class="formulario">
+  <h2>Reportes de Incidencia</h2>
+
+  <label for="tipo">Tipo de Incidencia:</label>
+  <select id="tipo" [(ngModel)]="tipoIncidencia" required>
+    <option value="" disabled selected>Selecciona una opción</option>
+    <option value="Fallo en la página">Fallo en la página</option>
+    <option value="Problema de salud en mascota">Problema de salud en mascota</option>
+  </select>
+
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="nombre" required>
+
+  <label for="apellidos">Apellidos:</label>
+  <input type="text" id="apellidos" [(ngModel)]="apellidos" required>
+
+  <label for="correo">Correo electrónico:</label>
+  <input type="email" id="correo" [(ngModel)]="correo" required>
+
+  <label for="telefono">Teléfono:</label>
+  <input type="tel" id="telefono" [(ngModel)]="telefono" required>
+
+  <label for="descripcion">Descripción del problema:</label>
+  <textarea id="descripcion" [(ngModel)]="descripcion" rows="5" required></textarea>
+
+  <button (click)="enviarFormulario()">Enviar Reporte</button>
+</div>
