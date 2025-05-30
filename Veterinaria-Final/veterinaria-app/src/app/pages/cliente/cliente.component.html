@@ -1,0 +1,61 @@
+<form (ngSubmit)="enviarFormulario()" #formulario="ngForm">
+  <h2>Reportes de Incidencia</h2>
+
+  <div class="grid">
+    <div class="campo">
+      <label for="tipo">Tipo de Incidencia:</label>
+      <select id="tipo" [(ngModel)]="tipoIncidencia" name="tipoIncidencia" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="Fallo en la página">Problema en la página</option>
+        <option value="Problema de salud en mascota">Problema con medicamentos</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="prioridad">Nivel de prioridad:</label>
+      <select id="prioridad" [(ngModel)]="nivelPrioridad" name="nivelPrioridad" required>
+        <option value="" disabled selected>Selecciona la prioridad</option>
+        <option value="alta">Alta</option>
+        <option value="media">Media</option>
+        <option value="baja">Baja</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+    </div>
+
+    <div class="campo">
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" id="apellidos" [(ngModel)]="apellidos" name="apellidos" required>
+    </div>
+
+    <div class="campo">
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" [(ngModel)]="correo" name="correo" required>
+    </div>
+
+    <div class="campo">
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" [(ngModel)]="telefono" name="telefono" required>
+    </div>
+  </div>
+
+  <div class="campo">
+    <label for="descripcion">Descripción del problema:</label>
+    <textarea id="descripcion" [(ngModel)]="descripcion" name="descripcion" rows="5" required></textarea>
+  </div>
+
+  <div class="botones-contenedor">
+    <div class="archivo-contenedor">
+      <label class="btn-archivo">
+        Adjuntar archivo
+        <input type="file" id="archivo" (change)="adjuntarArchivo($event)" hidden>
+      </label>
+      <span class="nombre-archivo" *ngIf="nombreArchivo">{{ nombreArchivo }}</span>
+    </div>
+
+    <button type="submit">Enviar reporte</button>
+  </div>
+</form>

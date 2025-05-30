@@ -1,0 +1,125 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('/images/fondo4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+form {
+  background: radial-gradient(at 24.182683184015975% 87.84145538818858%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%), radial-gradient(at 53.317331315594885% 51.05598127622819%, hsla(180, 32.00000000000001%, 70.58823529411765%, 1) 0%, hsla(180, 32.00000000000001%, 70.58823529411765%, 0) 100%), radial-gradient(at 45.13970978683963% 80.279989217324%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 1) 0%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 0) 100%), radial-gradient(at 67.2432457735036% 85.68203355586652%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%), radial-gradient(at 29.208298789205834% 64.9450943700276%, hsla(180, 32.00000000000001%, 70.58823529411765%, 1) 0%, hsla(180, 32.00000000000001%, 70.58823529411765%, 0) 100%), radial-gradient(at 90.8048422852741% 45.22702281854205%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 1) 0%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 0) 100%), radial-gradient(at 32.88250044865868% 88.06380896124169%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%), radial-gradient(at 55.34842137687335% 78.87859660797854%, hsla(180, 32.00000000000001%, 70.58823529411765%, 1) 0%, hsla(180, 32.00000000000001%, 70.58823529411765%, 0) 100%), radial-gradient(at 24.246204240042847% 70.95320191187552%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 1) 0%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 0) 100%), radial-gradient(at 70.84764293741219% 63.14286712264692%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-sizing: border-box;
+}
+
+/* Responsive para celulares */
+@media (max-width: 480px) {
+  form {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+    max-width: 90vw;
+    gap: 0.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  input, button {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+
+  .perros {
+    width: 90px;
+  }
+
+  .divider-text {
+    font-size: 0.8rem;
+  }
+}
+
+h2 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.btn-secundario {
+  background-color: #28a745;
+}
+
+.btn-secundario:hover {
+  background-color: #1e7e34;
+}
+
+.divider-text {
+  margin: 0.5rem 0;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.login-imagen-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.perros {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  transform: scale(1.03);
+}

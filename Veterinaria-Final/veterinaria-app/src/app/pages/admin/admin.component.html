@@ -1,0 +1,62 @@
+<div class="admin-container">
+  <!-- NAVBAR Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <a class="navbar-brand fw-bold" href="#"> {{ titulo }} </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse show" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="authService.isAdmin()">
+          <a class="nav-link" [routerLink]="['./usuarios']">Usuarios</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isAdmin() || authService.isVeterinario()">
+          <a class="nav-link" [routerLink]="['./incidencias-veterinario']">Incidencias Veterinario</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isAdmin()">
+          <a class="nav-link" [routerLink]="['./incidencias-cliente']">Incidencias Cliente</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isAdmin() || authService.isAlmacen()">
+          <a class="nav-link" [routerLink]="['./medicamentos']">Medicamentos</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isAdmin()">
+          <a
+            class="nav-link"
+            href="https://1drv.ms/x/c/b6eeb03a39e28fc2/EapubfIlYBhHpzu8E71awGABtEVedIUWS1vyPZ2jg33eXQ?e=uzAb2F"
+            target="_blank"
+          >
+            Descargar Información
+          </a>
+        </li>
+      </ul>
+      <div class="d-flex mt-2 mt-lg-0">
+        <button class="btn btn-danger cerrar-sesion-btn" (click)="logout()">Cerrar sesión</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- NOTIFICACIONES -->
+  <div *ngIf="mostrarNotificacion" class="notificacion">
+    📢 Nueva incidencia enviada por un cliente.
+    <button (click)="cerrarNotificacionIncidencia()">X</button>
+  </div>
+
+  <div *ngIf="mostrarArchivoAdjunto && archivoAdjuntoNombre" class="notificacion">
+    📎 Archivo adjunto recibido: <strong>{{ archivoAdjuntoNombre }}</strong>
+    <button (click)="cerrarNotificacionArchivo()">X</button>
+  </div>
+
+  <div class="container mt-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

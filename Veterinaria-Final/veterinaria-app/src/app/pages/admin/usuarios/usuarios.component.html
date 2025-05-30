@@ -1,0 +1,38 @@
+<div class="admin-container">
+  <div class="tabla-responsive">
+    <table>
+      <thead>
+        <tr class="titulo-tabla fondo-tabla">
+          <th colspan="5">Usuarios Registrados</th>
+        </tr>
+        <tr class="encabezados fondo-tabla">
+          <th>Usuario</th>
+          <th>Correo</th>
+          <th>Contraseña</th>
+          <th>Estado</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios" class="fondo-tabla">
+          <td data-label="Usuario">{{ usuario.username }}</td>
+          <td data-label="Correo">{{ usuario.correo }}</td>
+          <td data-label="Contraseña">{{ usuario.password }}</td>
+          <td data-label="Estado">
+            <span [ngClass]="{ 'bloqueado': estaBloqueado(usuario.id), 'activo': !estaBloqueado(usuario.id) }">
+              {{ estaBloqueado(usuario.id) ? 'Bloqueado' : 'Activo' }}
+            </span>
+          </td>
+          <td data-label="Acción">
+            <button class="btn-bloquear" *ngIf="!estaBloqueado(usuario.id)" (click)="bloquearUsuario(usuario.id)">
+              Bloquear
+            </button>
+            <button class="btn-desbloquear" *ngIf="estaBloqueado(usuario.id)" (click)="desbloquearUsuario(usuario.id)">
+              Desbloquear
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

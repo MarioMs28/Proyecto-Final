@@ -1,0 +1,31 @@
+<form (ngSubmit)="login()">
+  <h2>BioVet Clinica Integral</h2>
+  <div class="login-imagen-contenedor">
+    <img src="perro.jpg" alt="logo" class="perros">
+  </div>
+  
+
+  <input
+    type="text"
+    [(ngModel)]="usuario"
+    name="usuario"
+    placeholder="Usuario"
+    required
+  />
+
+  <input
+    type="password"
+    [(ngModel)]="contrasena"
+    name="contrasena"
+    placeholder="Contraseña"
+    required
+  />
+
+  <button type="submit">Iniciar Sesión</button>
+
+  <p class="divider-text">o</p>
+
+  <button type="button" class="btn-secundario" (click)="irAFormularioCliente()">
+    Crear Reporte
+  </button>
+</form>

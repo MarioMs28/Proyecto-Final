@@ -1,0 +1,38 @@
+<div class="admin-wrapper">
+  <div class="admin-container">
+    <h2>Incidencias de Clientes</h2>
+
+    <div *ngFor="let incidencia of incidencias" class="card">
+      <h3>{{ incidencia.tipo }}</h3>
+      <p><strong>Folio:</strong> {{ incidencia.folio }}</p>
+      <p><strong>Fecha:</strong> {{ incidencia.fecha | date:'fullDate' }}</p>
+      <p><strong>Nombre:</strong> {{ incidencia.nombre }} {{ incidencia.apellidos }}</p>
+      <p><strong>Correo:</strong> {{ incidencia.correo }}
+        <button (click)="abrirDialogo(incidencia)" style="margin-left: 10px;">Responder</button>
+      </p>
+      <p><strong>Teléfono:</strong> {{ incidencia.telefono }}</p>
+      <p><strong>Descripción:</strong> {{ incidencia.descripcion }}</p>
+      <p>
+        <span [ngClass]="{
+          'prioridad-alta': incidencia.prioridad === 'alta',
+          'prioridad-media': incidencia.prioridad === 'media',
+          'prioridad-baja': incidencia.prioridad === 'baja'}">
+          <strong>Prioridad:</strong> {{ incidencia.prioridad | uppercase }}
+        </span>
+      </p>
+    </div>
+
+    <!-- Cuadro de diálogo -->
+    <div *ngIf="mostrarDialogo" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 999;">
+      <div style="background: #fff; padding: 30px; border-radius: 16px; width: 90%; max-width: 500px;">
+        <h3>Responder a {{ incidenciaSeleccionada?.correo }}</h3>
+        <textarea [(ngModel)]="respuesta" rows="6" style="width: 100%; margin-bottom: 20px;"></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button (click)="cerrarDialogo()">Cancelar</button>
+          <button (click)="enviarRespuesta()" [disabled]="!respuesta.trim()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
